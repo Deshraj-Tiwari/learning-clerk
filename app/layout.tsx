@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Clerk Authentication Demo",
@@ -18,7 +19,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={ubuntu.className}>
+          <Navbar />
+          <main
+            style={{ minHeight: "calc(100vh - 70px)" }}
+            className="flex flex-col justify-center items-center"
+          >
+            {children}
+          </main>
+        </body>
       </html>
     </ClerkProvider>
   );

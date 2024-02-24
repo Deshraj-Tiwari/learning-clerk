@@ -1,7 +1,9 @@
-export default function Home() {
+import React from "react";
+
+function Home(): React.ReactElement {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl text-purple-600">Hello Clerk!</h1>
-    </main>
+    <h1 className="text-4xl font-semibold text-purple-600">Hello Clerk!</h1>
   );
 }
+
+export default Home;
